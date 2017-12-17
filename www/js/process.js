@@ -1,24 +1,30 @@
 let process = {
 	menu:function(){
 		let content = <div>
-		<div className="navbar">
+		<audio id="audio_ticking">
+				<source src="audio/ticking.mp3" type="audio/mp3" />
+			</audio>
+			<div className="navbar">
               <div className="navbar-inner">
-                <div className="center">COOKING TUTORIAL</div>
+                <div className="center"><center>THE LEAGUE OF LEGENDS CHAMPIONS</center></div>
               </div>
             </div>
-		
 			<ul>
-				<li><a href='#' onClick={process.page1}> CHICKEN ADOBO</a></li>
-				<li><a href='#' onClick={process.page2}> CHICKEN BARBEQUE</a></li>
-				<li><a href='#' onClick={process.page3}> SINIGANG NA ISDA</a></li>
-				<li><a href='#' onClick={process.page4}> KARI-KARI</a></li>
-				<li><a href='#' onClick={process.page5}> LECHON MANOK</a></li>
-				<li><a href='#' onClick={process.page6}> PINAKBET</a></li>
-				<li><a href='#' onClick={process.page7}> Chopsuey</a></li>
-				<li><a href='#' onClick={process.page8}> MONGO BEANS</a></li>
-				<li><a href='#' onClick={process.page9}> FRUIT SALAD</a></li>
-				<li><a href='#' onClick={process.page10}> CUPCAKE</a></li>
-
+				<li><a href='#' onClick={process.page1}><img src='img/amg.jpg' width='30%' /> LUCIAN</a></li>
+				<li><a href='#' onClick={process.page2}><img src='img/amg.jpg' width='30%' /> TEEMO</a></li>
+				<li><a href='#' onClick={process.page3}><img src='img/amg.jpg' width='30%' /> VI</a></li>
+				<li><a href='#' onClick={process.page4}><img src='img/amg.jpg' width='30%' /> WARWICK</a></li>
+				<li><a href='#' onClick={process.page5}><img src='img/amg.jpg' width='30%' /> MAOKAI</a></li>
+				<li><a href='#' onClick={process.page6}><img src='img/amg.jpg' width='30%' /> LEE SIN</a></li>
+				<li><a href='#' onClick={process.page7}><img src='img/amg.jpg' width='30%' /> TALIYAH</a></li>
+				<li><a href='#' onClick={process.page8}><img src='img/amg.jpg' width='30%' /> CAITLYN</a></li>
+				<li><a href='#' onClick={process.page9}><img src='img/amg.jpg' width='30%' /> AHRI</a></li>
+				<li><a href='#' onClick={process.page10}><img src='img/amg.jpg' width='30%' /> TARIC</a></li>
+				<li><a href='#' onClick={process.page11}><img src='img/amg.jpg' width='30%' /> ZED</a></li>
+				<li><a href='#' onClick={process.page12}><img src='img/amg.jpg' width='30%' /> KATARINA</a></li>
+				<li><a href='#' onClick={process.page13}><img src='img/amg.jpg' width='30%' /> YASOU</a></li>
+				<li><a href='#' onClick={process.page14}><img src='img/amg.jpg' width='30%' /> YI</a></li>
+				<li><a href='#' onClick={process.page15}><img src='img/amg.jpg' width='30%' /> GAREN</a></li>
 				
 			</ul>
 		</div>;
@@ -26,212 +32,258 @@ let process = {
 	},
 	page1:function(){
 		let content = <div>
-				
-	<img src='img/ado.gif' width='100%' /><a href='#' className='btn-back' onClick={process.menu}><b>Back</b></a>
-	<br/>CHICKEN ADOBO<b></b> <br/>
-	8 whole chicken legs (about 4 pounds), cut into drumstick and thigh sections.
-1 1/2 cups distilled white vinegar.
-3 garlic cloves, crushed.
-2 bay leaves.
-1/2 tablespoon whole black peppercorns, crushed lightly.
-3/4 cup soy sauce.
-3 tablespoons vegetable oil.
-cooked rice as an accompaniment.
-			
+				<audio id="audio_ticking">
+					<source src="audio/ticking.mp3" type="audio/mp3" />
+				</audio>
+				<img src='img/lucian.gif' height='100%' width='100%' />
+				"Be grateful. By slaying you now, I spare you an eternity of torment." - LucianSquare Lucian
+Once a Sentinel of Light, Lucian is a grim hunter of undying spirits, pursuing them relentlessly and annihilating them with his twin relic pistols. Consumed by the need to avenge his dead wife, he will not rest until Thresh, the specter who holds her soul, is destroyed. Merciless and single-minded, Lucian allows nothing to stand in the path of this vengeance—anyone or anything foolish enough to try is blown away by an overwhelming barrage of magical gunfire.<br/><a href='#' className='btn-back' onClick={process.menu}>back</a>
 			</div>;
 			ReactDOM.render(content,document.getElementById('root'));
+		process.audio('audio_ticking').play();
+		// process.audio('audio_ticking').pause();
+
+var setTimer = 0;
+function clock(){
+	let timer = <h1>{new Date().toLocaleTimeString()}</h1>;
+	ReactDOM.render(timer,document.getElementById('timer'));	
+
+	setTimer = setTimeout(function(){
+		clock();
+	},5000);
+};
+
+function stopClock(){
+	clearInterval(setTimer);
+}
+
+let btn = <div>
+				<div id='timer' className='text'></div>
+				<div id='execute' className='text'></div>
+				<div id='output' className='text'></div>
+				<div id='error' className='text'></div>
+				<div id='commands' className='text'></div>
+				<div id='dbfile' className='text'></div>
+				<div id='savedb' className='text'></div>
+				<button onClick={clock}>Start Clock</button>
+				<button onClick={stopClock}>Stop Clock</button>
+			</div>;
+
+
 
 	},
 	page2:function(){
-			let content = <div>
-				<img src='img/bbq.gif' width='100%' /><a href='#' className='btn-back' onClick={process.menu}><b>Back</b></a>
-				 <br/><b>CHICKEN BARBEQUE</b><br/>
-	2 tablespoons vegetable oil.
-¼ cup tomato paste.
-2 teaspoons garlic powder.
-2 teaspoons onion powder.
-1 teaspoon smoked paprika.
-½ teaspoon cayenne pepper.
-½ teaspoon freshly ground black pepper.
-½ cup apple cider vinegar.	
+		let content = <div>
+				<audio id="audio_ticking">
+					<source src="audio/ticking.mp3" type="audio/mp3" />
+				</audio>
+				<img src='img/teemo.gif' height='100%' width='100%' />
+				"TeemoSquare Teemo rides a thin line between chipper compatriot and unrepentant killer, but there's no one else I'd rather have as a friend. - TristanaSquare Tristana
+Undeterred by even the most dangerous and threatening of obstacles, Teemo scouts the world with boundless enthusiasm and a cheerful spirit. A yordle with an unwavering sense of morality, he takes pride in following the Bandle Scout's Code, sometimes with such eagerness that he is unaware of the broader consequences of his actions. Though some say the existence of the Scouts is questionable, one thing is for certain: Teemo's conviction is nothing to be trifled with.<br/><a href='#' className='btn-back' onClick={process.menu}>back</a>
 			</div>;
 			ReactDOM.render(content,document.getElementById('root'));
-	
-		
+		process.audio('audio_ticking').play();
+		// process.audio('audio_ticking').pause();
 	},
 	page3:function(){
 		let content = <div>
-
-			<img src='img/bangus.gif' width='100%' /><a href='#' className='btn-back' onClick={process.menu}><b>Back</b></a>
-		<br/><b>SINIGANG NA ISDA</b>
-	1 piece large Milkfish (bangus), cleaned and sliced into serving pieces.
-2 pieces tomatoes, quartered.
-2 cups kangkong leaves or Chinese cabbage (bokchoy), cut into serving size.
-1 small white radish (labanos), sliced.
-1 tbsp fish sauce.
-1 medium onion, sliced.
-5 cups water.
-1 small pack tamarind powder.
+				<audio id="audio_ticking">
+					<source src="audio/ticking.mp3" type="audio/mp3" />
+				</audio>
+				<img src='img/vi.gif' width='100%%' />
+				"Do you want a punch to the face or the gut? Wait, I got two fists, it can be both!" - ViSquare Vi
+Once a criminal from the mean streets of Zaun, Vi is a hotheaded, impulsive, and fearsome woman with only a very loose respect for authority figures. Growing up all but alone, Vi developed finely honed survival instincts as well as a wickedly abrasive sense of humor. Now working with the Wardens of Piltover to keep the peace, she wields mighty hextech Excessive Force gauntlets that can punch through walls and suspects with equal ease.<br/><a href='#' className='btn-back' onClick={process.menu}>back</a>
 			</div>;
 			ReactDOM.render(content,document.getElementById('root'));
-		
+		process.audio('audio_ticking').play();
+		// process.audio('audio_ticking').pause();
 	},
 	page4:function(){
 		let content = <div>
-				
-				<img src='img/kari.gif' width='100%' /><a href='#' className='btn-back' onClick={process.menu}><b>Back</b></a>
-			<br/><b>KARI-KARI</b><br/>
-			2 1⁄2 lbs pork hocks or 2 1⁄2 lbs oxtails, cut into 2" lengths.
-1⁄2 lb stewing beef, to make a meatier dish (optional)
-1 1⁄2 teaspoons salt.
-2 tablespoons cooking oil.
-2 cloves garlic, minced.
-1 medium onion, sliced.
-1⁄2 cup achute water (optional)
-3 tablespoons peanut butter.
+				<audio id="audio_ticking">
+					<source src="audio/ticking.mp3" type="audio/mp3" />
+				</audio>
+				<img src='img/warwick.gif' height='100%' width='100%' />
+				"Spill blood... draw the beast!" - WarwickSquare Warwick
+Warwick is a monster who hunts the gray alleys of Zaun. Transformed by agonizing experiments, his body is fused with an intricate system of chambers and pumps, machinery filling his veins with alchemical rage. Bursting out of the shadows, he preys upon those criminals who terrorize the city's depths. Warwick is drawn to blood, and driven mad by its Blood Hunt scent. None who spill it can escape him.<br/><a href='#' className='btn-back' onClick={process.menu}>BACK</a>
 			</div>;
 			ReactDOM.render(content,document.getElementById('root'));
+		process.audio('audio_ticking').play();
+		// process.audio('audio_ticking').pause();
 	},
-
 	page5:function(){
 		let content = <div>
-				
-				<img src='img/lec.gif' width='100%' /><a href='#' className='btn-back' onClick={process.menu}><b>Back</b></a>
-			<br/><b>LECHON MANOK</b><br/>
-			1 whole chicken.
-1 onion, chopped.
-15 cloves garlic, minced.
-1/4 cup fish sauce (patis)
-4 tablespoon calamansi juice.
-1 teaspoon salt.
+				<audio id="audio_ticking">
+					<source src="audio/ticking.mp3" type="audio/mp3" />
+				</audio>
+				<img src='img/maokai.gif' height='100%' width='100%' />
+				"All around me are empty husks, soulless and unafraid... but I will bring them fear." - MaokaiSquare Maokai
+Maokai is a rageful, towering treant who fights the unnatural horrors of the Shadow Isles. He was twisted into a force of vengeance after a Blade of the Ruined King item magical cataclysm destroyed his home, surviving undeath only through the waters of life infused within his heartwood. Once a peaceful nature spirit, Maokai now furiously battles to banish the scourge of unlife from the Shadow Isles and restore his home to its former beauty.<br/><a href='#' className='btn-back' onClick={process.menu}>back</a>
 			</div>;
 			ReactDOM.render(content,document.getElementById('root'));
-	
+		process.audio('audio_ticking').play();
+		// process.audio('audio_ticking').pause();
 	},
-
 	page6:function(){
 		let content = <div>
-				
-	<img src='img/ado.gif' width='100%' /><a href='#' className='btn-back' onClick={process.menu}><b>Back</b></a>
-	<br/>PINAKBET<b></b> <br/>
-	2 medium-length eggplants, cubed
-1 medium-length bitter melon (ampalaya), sliced
-6 tender okra pods
-1 garlic clove, minced
-1/2 cup of sliced onions
-1/2 cup chopped tomatoes
-1 cup water from rinsing rice
-3 tbsp fermented sauce (less if it’s a salty bagoong)
-1 tbsp pounded ginger
-1 cup boiled sliced pork
-2 tbsp cooking oil
-			
+				<audio id="audio_ticking">
+					<source src="audio/ticking.mp3" type="audio/mp3" />
+				</audio>
+				<img src='img/leesin.gif' height='100%' width='100%' />
+				"The actions of one may sunder the world, but the efforts of many may rebuild it." - Lee SinSquare Lee Sin
+A master of Ionia's ancient martial arts, Lee Sin is a principled fighter who channels the essence of the dragon spirit to face any challenge. Though he lost his sight many years ago, the warrior-monk has devoted his life to protecting his homeland against any who would dare upset its sacred balance. Enemies who underestimate his meditative demeanor will endure his fabled burning fists and blazing roundhouse kicks.<br/><a href='#' className='btn-back' onClick={process.menu}>back</a>
 			</div>;
 			ReactDOM.render(content,document.getElementById('root'));
-
+		process.audio('audio_ticking').play();
+		// process.audio('audio_ticking').pause();
 	},
-
 	page7:function(){
 		let content = <div>
-				
-	<img src='img/ado.gif' width='100%' /><a href='#' className='btn-back' onClick={process.menu}><b>Back</b></a>
-	<br/>Chopsuey<b></b> <br/>
-	¼ lb shrimp
-½ lb boneless chicken
-1 tsp garlic
-2 tsp cornstarch
-1 tbsp oyster sauce
-½ piece cabbage, quartered
-1 cup green bell pepper,sliced
-1 cup red bell pepper, sliced
-1 small cauliflower, cut into small pieces
-1 ½ cup snow peas
-1 cup carrots, sliced
-1 cup onion, diced
-1 cup chicken liver, sliced
-Shrimp juice (derived by crushing the head of the shrimp) or use shrimp bouillon
-1¼ cup water
-salt and pepper
-			
+				<audio id="audio_ticking">
+					<source src="audio/ticking.mp3" type="audio/mp3" />
+				</audio>
+				<img src='img/taliyah.gif' height='100%' width='100%' />
+				"This world is a tapestry of our own making." - TaliyahSquare Taliyah
+Taliyah is a nomadic mage from Shurima, torn between teenage wonder and adult responsibility. She has crossed nearly all of Valoran on a journey to learn the true nature of her growing powers, though more recently she has returned to protect her tribe. Some have mistaken her compassion for weakness and paid the ultimate price—for beneath Taliyah's youthful demeanor is a will strong enough to move mountains, and a spirit fierce enough to make the earth itself tremble.<br/><a href='#' className='btn-back' onClick={process.menu}>back</a>
 			</div>;
 			ReactDOM.render(content,document.getElementById('root'));
-
+		process.audio('audio_ticking').play();
+		// process.audio('audio_ticking').pause();
 	},
-
 	page8:function(){
 		let content = <div>
-				
-	<img src='img/ado.gif' width='100%' /><a href='#' className='btn-back' onClick={process.menu}><b>Back</b></a>
-	<br/>MONGO BEANS<b></b> <br/>
-	1 cup dried mung beans
-7 cups water
-1 tablespoon vegetable oil
-1 onion, peeled and sliced thinly
-3 cloves garlic, peeled and minced
-1 large tomato, chopped
-2 cups chicharon (pork cracklings with attached meat)
-1 bunch fresh spinach, stems trimmed
-1 tablespoon fish sauce
-			
+				<audio id="audio_ticking">
+					<source src="audio/ticking.mp3" type="audio/mp3" />
+				</audio>
+				<img src='img/caitlyn.gif' height='100%' width='100%' />
+				"To be the best hunter, you have to be able to think like your prey." -  CaitlynSquare Caitlyn
+Renowned as its finest peacekeeper, Caitlyn is also Piltover's best shot at ridding the city of its elusive criminal elements. She is often paired with Vi, acting as a cool counterpoint to her partner's more impetuous nature. Even though she carries a one-of-a-kind hextech rifle, Caitlyn's most powerful weapon is her superior intellect, allowing her to lay elaborate traps for any lawbreakers foolish enough to operate in the City of Progress.<br/><a href='#' className='btn-back' onClick={process.menu}>back</a>
 			</div>;
 			ReactDOM.render(content,document.getElementById('root'));
-
+		process.audio('audio_ticking').play();
+		// process.audio('audio_ticking').pause();
 	},
-
 	page9:function(){
 		let content = <div>
-				
-	<img src='img/ado.gif' width='100%' /><a href='#' className='btn-back' onClick={process.menu}><b>Back</b></a>
-	<br/>FRUIT SALAD<b></b> <br/>
-	1 1⁄2 cups heavy cream.
-1 (8 ounce) package cream cheese.
-3 (14 ounce) cans fruit cocktail, drained.
-1 (14 ounce) can pineapple chunks, drained.
-1 (14 ounce) can lychees, drained.
-1 cup coconut.
-1 (8 ounce) packageunsalted chopped almonds (optional)
-1 1⁄2 cups cubed apples (optional)
-			
+				<audio id="audio_ticking">
+					<source src="audio/ticking.mp3" type="audio/mp3" />
+				</audio>
+				<img src='img/ahri.gif' height='100%' width='100%' />
+				"Human emotions can be more volatile than even the deepest magic." - AhriSquare Ahri
+Innately connected to the latent power of Runeterra, Ahri is a vastaya who can reshape magic into Orb of Deception orbs of raw energy. She revels in toying with her prey by manipulating their emotions before devouring their Essence Theft life essence. Despite her predatory nature, Ahri retains a sense of empathy as she receives flashes of memory from each soul she consumes.<br/><a href='#' className='btn-back' onClick={process.menu}>back</a>
 			</div>;
 			ReactDOM.render(content,document.getElementById('root'));
-
+		process.audio('audio_ticking').play();
+		// process.audio('audio_ticking').pause();
 	},
-
 	page10:function(){
 		let content = <div>
-				
-	<img src='img/ado.gif' width='100%' /><a href='#' className='btn-back' onClick={process.menu}><b>Back</b></a>
-	<br/>CUPCAKE<b></b> <br/>
-	2 cups flour.
-1⁄2 teaspoon salt.
-2 teaspoons baking powder.
-1⁄2 cup butter, softened.
-⁄4 cup sugar (if you like your cupcakes very sweet, add a little more.)
-2 eggs.
-1 cup milk.
-1 teaspoon vanilla essence (optional)
-			
+				<audio id="audio_ticking">
+					<source src="audio/ticking.mp3" type="audio/mp3" />
+				</audio>
+				<img src='img/taric.gif' height='100%' width='100%' />
+				"The best weapons are beautiful." - TaricSquare Taric
+Taric is the Aspect of the Protector, wielding incredible power as Runeterra's guardian of life, love, and beauty. Shamed by a dereliction of duty and exiled from his homeland Demacia, Taric ascended Mount Targon to find redemption, only to discover a higher calling among the stars. Imbued with the might of ancient Targon, the Shield of Valoran now stands ever vigilant against the insidious corruption of the Void.<br/><a href='#' className='btn-back' onClick={process.menu}>back</a>
 			</div>;
 			ReactDOM.render(content,document.getElementById('root'));
-
-    },
-
-
-
+		process.audio('audio_ticking').play();
+		// process.audio('audio_ticking').pause();
+	},
+	page11:function(){
+		let content = <div>
+				<audio id="audio_ticking">
+					<source src="audio/ticking.mp3" type="audio/mp3" />
+				</audio>
+				<img src='img/zed.gif' height='100%' width='100%' />
+				"Balance is a lie - we are the true ninjas." - ZedSquare Zed
+Utterly ruthless and without mercy, Zed is the leader of the Order of Shadow, an organization he created with the intent of militarizing Ionia's martial arts traditions to drive out Noxian invaders. During the war, desperation led him to unlock the secret shadow form—a malevolent spirit magic as dangerous and corrupting as it is powerful. Zed has mastered all of these forbidden techniques to destroy anything he sees as a threat to his nation, or his new order.<br/><a href='#' className='btn-back' onClick={process.menu}>back</a>
+			</div>;
+			ReactDOM.render(content,document.getElementById('root'));
+		process.audio('audio_ticking').play();
+		// process.audio('audio_ticking').pause();
+	},
+	page12:function(){
+		let content = <div>
+				<audio id="audio_ticking">
+					<source src="audio/ticking.mp3" type="audio/mp3" />
+				</audio>
+				<img src='img/katarina.jpg' height='100%' width='100%' />
+				"Balance is a lie - we are the true ninjas." - ZedSquare Zed
+Utterly ruthless and without mercy, Zed is the leader of the Order of Shadow, an organization he created with the intent of militarizing Ionia's martial arts traditions to drive out Noxian invaders. During the war, desperation led him to unlock the secret shadow form—a malevolent spirit magic as dangerous and corrupting as it is powerful. Zed has mastered all of these forbidden techniques to destroy anything he sees as a threat to his nation, or his new order.<br/><a href='#' className='btn-back' onClick={process.menu}>back</a>
+			</div>;
+			ReactDOM.render(content,document.getElementById('root'));
+		process.audio('audio_ticking').play();
+		// process.audio('audio_ticking').pause();
+	},
+	page13:function(){
+		let content = <div>
+				<audio id="audio_ticking">
+					<source src="audio/ticking.mp3" type="audio/mp3" />
+				</audio>
+				<img src='img/yasou.jpg' height='100%' width='100%' />
+			    "The story of a sword is inked in blood." - YasuoSquare Yasuo
+An Ionian of deep resolve, Yasuo is an agile swordsman, trained to wield the air itself against his enemies. As a young man, pride led him down a path of loss, costing him his position, his mentor, and ultimately his own brother. Disgraced by false accusations and now hunted as little more than a criminal, Yasuo wanders his homeland seeking redemption for his past, with only the wind to guide his blade.<br/><a href='#' className='btn-back' onClick={process.menu}>back</a>
+			</div>;
+			ReactDOM.render(content,document.getElementById('root'));
+		process.audio('audio_ticking').play();
+		// process.audio('audio_ticking').pause();
+	},
+	page14:function(){
+		let content = <div>
+				<audio id="audio_ticking">
+					<source src="audio/ticking.mp3" type="audio/mp3" />
+				</audio>
+				<img src='img/yi.jpg' height='100%' width='100%' />
+				"These isles... how they scream." - YorickSquare Yorick
+The last survivor of a long-forgotten religious order, Yorick is both blessed and cursed with power over the dead. Trapped on the Shadow Isles, his only companions are the rotting Shepherd of Souls corpses and shrieking Eulogy of the Isles spirits that he gathers to him. Yorick's monstrous actions belie his noble purpose: to free his home from the curse of the Blade of the Ruined King item Ruination.<br/><a href='#' className='btn-back' onClick={process.menu}>back</a>
+			</div>;
+			ReactDOM.render(content,document.getElementById('root'));
+		process.audio('audio_ticking').play();
+		// process.audio('audio_ticking').pause();
+	},
+	page15:function(){
+		let content = <div>
+				<audio id="audio_ticking">
+					<source src="audio/ticking.mp3" type="audio/mp3" />
+				</audio>
+				<img src='img/garen.jpg' height='100%' width='100%' />
+				"This kingdom, and its people, have given me everything. What kind of man would I be if I gave any less in return?" - GarenSquare Garen
+A proud and noble warrior, Garen fights as one of the Dauntless Vanguard. He is popular among his fellows, and respected well enough by his enemies—not least as a scion of the prestigious Crownguard family, entrusted with defending Demacia and its ideals. Clad in magic-resistant armor and bearing a mighty broadsword, Garen stands ready to confront mages and sorcerers on the field of battle, in a veritable whirlwind of righteous steel.<br/><a href='#' className='btn-back' onClick={process.menu}>back</a>
+			</div>;
+			ReactDOM.render(content,document.getElementById('root'));
+		process.audio('audio_ticking').play();
+		// process.audio('audio_ticking').pause();
+	},	
 	loading:function(){
 		let content = <div>
-					
-
+					<div className="progressbar-infinite"></div>
+					<audio id="audio">
+						<source src="audio/legend.mp3" type="audio/mp3" />
+					</audio>
 					<div align='center'>
-						<img src='img/una.gif' width='100%'/>
+						<img src='img/lol.jpg' width='100%' />
+						Loading...
 					</div>
 				</div>;
 		ReactDOM.render(content,document.getElementById('root'));
-		
+		process.audio('audio').play();
+		process.replayAudio('audio');
 	},
-	
+	audio:function(audio){
+		let _audio = document.getElementById(audio);
+		return _audio;
+	},
+	replayAudio:function(audio){
+		process.audio(audio).addEventListener('ended',function(){
+			process.audio('audio').pause();
+			process.audio(audio).play();
+		})
+	}
 }
+
+let counting = 0;
 process.loading();
 setTimeout(function(){
+	process.audio('audio').pause();
 	process.menu();
-},1000);
+a},8000);
